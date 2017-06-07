@@ -11,7 +11,7 @@ protocol ExampleProtocol {
     mutating func adjust()
 }
 
-extension Double: ExampleProtocol {     //プロトコル準拠しないとExtensionが使えないわけではない。s
+extension Double: ExampleProtocol {     //プロトコル準拠しないとExtensionが使えないわけではない。
     
     var simpleDescription: String {
         return "The number \(self)"
