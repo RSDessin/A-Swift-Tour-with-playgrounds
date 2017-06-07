@@ -60,8 +60,7 @@ default:
 let interestingNumbers = [
     "Prime": [2, 3, 5, 7, 11, 13],      //順序の担保はないので、ループ処理をするとどの順に処理されるかは決まっていない
     "Fibonacci": [1, 1, 2, 3, 5, 8],
-    "Square": [1, 4, 9, 16, 25],
-    
+    "Square": [1, 4, 9, 16, 25]
 ]
 
 var largest = 0

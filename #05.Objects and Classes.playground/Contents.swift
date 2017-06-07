@@ -106,12 +106,14 @@ class TriangleAndSquare {
         willSet {
             print("TriangleAndSquare.triangle.willSet")
             square.sideLength = newValue.sideLength     //triangleの一辺の長さを変える前に、squareの長さを変更する。
+            print("EquilateralTriangle : willSet")
         }
     }
     var square: Square {
         willSet {
             print("TriangleAndSquare.square.willSet")
             triangle.sideLength = newValue.sideLength   //squareの一辺の長さを変える前に、triangleの長さを変更する。
+            print("Square : willSet")
         }
     }
     
@@ -123,8 +125,8 @@ class TriangleAndSquare {
 }
 
 var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape") //TriangleAndSquareのインスタンス生成
-print(triangleAndSquare.square.sideLength)                                      //TriangleAndSquare.initでセットされた値
-print(triangleAndSquare.triangle.sideLength)                                    //TriangleAndSquare.initでセットされた値
+print(triangleAndSquare.square.sideLength)                                      //Square.initでセットされた値
+print(triangleAndSquare.triangle.sideLength)                                    //EquilateralTriangle.initでセットされた値
 triangleAndSquare.square = Square(sideLength: 50, name: "larger square")        //squareに値をセット
 print(triangleAndSquare.triangle.sideLength)                                    //TriangleAndSquare.square.willSetでセットされた値
 

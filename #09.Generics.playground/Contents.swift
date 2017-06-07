@@ -32,7 +32,7 @@ func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool    
     where T.Iterator.Element: Equatable, T.Iterator.Element == U.Iterator.Element {
         
         //lhsとrhsの要素を比較し、同じものがあったらtrueを返す。（この処理を行いたいからwhereの前提条件が必要でした）
-        for lhsItem in lhs {s
+        for lhsItem in lhs {
             for rhsItem in rhs {
                 if lhsItem == rhsItem {
                     return true

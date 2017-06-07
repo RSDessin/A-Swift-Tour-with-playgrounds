@@ -91,7 +91,7 @@ case let .failure(message):
 //struct
 //classととてもよく似ているが、structは値渡し、classは参照渡し。またstructは継承ができない仕様。
 
-struct Card {
+struct Card{
     var rank: Rank
     var suit: Suit
     func simpleDescription() -> String {
@@ -132,7 +132,7 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 /************************
  EXPERIMENT #15
  Add a method to Card that creates a full deck of cards, with one card of each combination of rank and suit.
- rankとsuitのそれぞれの組み合わせを1枚のカードとして、トランプ一式を返すメソッドを追加してください。
+ rankとsuitのそれぞれの組み合わせを1枚のカードとして、トランプ一式を返すメソッドをCard構造体に追加してください。
  ヒント1：Card構造体の配列を戻り値とする関数をつくる
  → こんな関数：static func fullDeck() -> [Card] { .... ）、関数の呼び方：Card.fullDeck()
  ヒント2：rawValueを扱うので、"enum Suit {..." は "enum Suit: Int {..." と修正したほうがよい。

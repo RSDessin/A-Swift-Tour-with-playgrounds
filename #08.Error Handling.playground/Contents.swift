@@ -17,7 +17,7 @@ do {
     let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")    //try：このメソッドはエラーを投げる
     print(printerResponse)
 } catch {
-    print(error)
+    print(error)    //暗黙で使えるerrorオブジェクト
 }
 
 /************************
@@ -30,8 +30,10 @@ do {
 do {
     let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
     print(printerResponse)
-} catch PrinterError.onFire {                                           //
+    
+} catch PrinterError.onFire {
     print("I'll just put this over here, with the rest of the fire.")
+    //print(error)  　//エラーオブジェクトが無指定ではないので利用不可
 } catch let printerError as PrinterError {
     print("Printer error: \(printerError).")
 } catch {
@@ -43,7 +45,7 @@ do {
  Add code to throw an error inside the do block.
  What kind of error do you need to throw　so that the error is handled by the first catch block?
  What about the second and third blocks?
- sdoブロック内にエラーを投げるコードを追加してください。
+ doブロック内にエラーを投げるコードを追加してください。
  エラーが最初のcatchブロックによって処理されるようにするには、どのようなエラーを投げる必要がありますか？
  2番目と3番目のブロックはどうですか？
  ************************/
